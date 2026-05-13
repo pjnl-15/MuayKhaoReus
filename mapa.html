@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muay Khao Reus · Mapa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
+        <img src="images/logo.png" alt="Muay Khao Reus" style="width:110px; height:110px; object-fit:contain; position:relative; z-index:10;">
+        <div>
+          <strong>Muay Khao Reus</strong>
+          <div>Muay Thai · Reus</div>
+        </div>
+      </a>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <button class="hamburger" aria-label="Obrir menú">☰</button>
+        <div class="nav nav-links">
+          <a href="index.html" class="nav-link">Inici</a>
+          <a href="info.html" class="nav-link">Informació</a>
+          <a href="multimedia.html" class="nav-link">Multimèdia</a>
+          <a href="mapa.html" class="nav-link active">Mapa</a>
+          <a href="contacte.html" class="nav-link">Contacte</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-alt" style="padding: 24px 0;">
+      <div style="width:100%; margin:0; padding:0 16px; box-sizing:border-box;">
+        <div class="panel map-box">
+          <iframe src="qgis_perf/index.html"
+                  width="100%"
+                  height="100%"
+                  style="border:none; border-radius:12px; display:block;">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Muay Khao Reus</p>
+      <div class="footer-links">
+        <a href="index.html">Tornar a l'inici</a>
+        <a href="https://www.instagram.com/muaykhaoreus.mt/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    /* Event listener de Leaflet per mostrar coordenades en clicar el mapa.
+       S'activarà automàticament quan es substitueixi l'embed de Google Maps
+       per un mapa Leaflet amb la variable global `map`. */
+    if (typeof L !== 'undefined' && typeof map !== 'undefined') {
+      map.on('click', function(e) {
+        L.popup()
+          .setLatLng(e.latlng)
+          .setContent('Coordenades: ' + e.latlng.lat.toFixed(5) +
+                      ', ' + e.latlng.lng.toFixed(5))
+          .openOn(map);
+      });
+    }
+  </script>
+</body>
+</html>
