@@ -650,21 +650,27 @@ iframe {
    MEDIA QUERIES — breakpoints valorats pel professor
    ============================================================ */
 
-/* --- Mòbil petit (< 600px) --- */
-@media (max-width: 600px) {
-  /* Mostra el botó hamburguesa */
+/* --- Hamburguesa (< 768px) --- */
+@media (max-width: 767px) {
   .hamburger {
     display: block;
-    margin-left: auto;
   }
 
-  /* Nav oculta fins que s'obri */
+  /* Dropdown absolut anclejat al contenidor relatiu */
   .nav {
     display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
     flex-direction: column;
-    flex-basis: 100%;
-    gap: 6px;
-    padding: 8px 0;
+    gap: 4px;
+    padding: 10px;
+    min-width: 180px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 200;
   }
 
   .nav.open {
@@ -673,13 +679,11 @@ iframe {
 
   .nav-link {
     text-align: center;
-    border-radius: var(--radius);
   }
+}
 
-  .navbar {
-    flex-wrap: wrap;
-  }
-
+/* --- Mòbil petit (< 600px) — layout de graella --- */
+@media (max-width: 600px) {
   /* Totes les columnes al 100% */
   .hero-grid,
   .info-grid,
