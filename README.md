@@ -8,7 +8,7 @@ Lloc web sobre el gimnàs Muay Khao Reus, un gimnàs de Muay Thai i Kickboxing s
 
 Tecnologies
 
-HTML5, CSS3 amb variables i disseny responsive, JavaScript per al menú i el formulari, Leaflet.js per al mapa interactiu i QGIS amb qgis2web per exportar el mapa.
+HTML5, CSS3 amb variables i disseny responsive, JavaScript per al menú i el formulari, Leaflet.js per al mapa interactiu, QGIS amb qgis2web per exportar el mapa i framework Bootstrap.
 
 Fitxers
 
