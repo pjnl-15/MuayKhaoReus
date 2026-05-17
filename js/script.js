@@ -1,4 +1,11 @@
 /* === HAMBURGUESA — menú mòbil === */
+document.querySelectorAll('a[href="#top"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger');
   const navLinks  = document.querySelector('.nav-links');

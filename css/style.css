@@ -9,7 +9,7 @@
   --gold:     #c0202a;
   --gold-lt:  #e02535;
   --text:     #f0ece4;
-  --muted:    #7a8a9a;
+  --muted:    #c8d0d8;
   --border:   #1e2d45;
   --radius:   12px;
 }
@@ -54,6 +54,9 @@ iframe {
   width: 100%;
 }
 
+p { color: #c8d0d8; }
+li { color: #c8d0d8; }
+
 /* === CONTENIDOR === */
 .container {
   width: min(1150px, 92%);
@@ -74,10 +77,32 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 30px;
+  padding: 0.5rem 1rem 0.5rem 0;
   width: 100%;
   box-sizing: border-box;
-  overflow: visible;
+  min-height: 70px;
+}
+
+/* === LOGO NAVBAR === */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  white-space: nowrap;
 }
 
 /* === BRAND / LOGO === */
@@ -211,7 +236,8 @@ iframe {
 }
 
 .hero-main {
-  padding: 22px;
+  padding: 2rem 2.5rem;
+  height: fit-content;
 }
 
 /* Badge/eyebrow: detall en daurat */
@@ -228,7 +254,7 @@ iframe {
 }
 
 .hero h1 {
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   margin-bottom: 10px;
   color: var(--text);
@@ -241,7 +267,7 @@ iframe {
 
 .hero p {
   color: var(--muted);
-  max-width: 60ch;
+  max-width: 100%;
   font-size: 0.9rem;
 }
 
